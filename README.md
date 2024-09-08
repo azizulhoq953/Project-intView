@@ -6,13 +6,14 @@
 
 ### Project Overview
 
-An interactive storytelling platform where users can engage with stories through choices that affect the narrative. The project includes both frontend and backend components, leveraging modern technologies to provide a seamless user experience.
+Develop an interactive storytelling platform that allows users to read or create stories featuring branching narratives. The platform should enable multiple story paths, determined by user choices, and provide authors with valuable insights, such as the most popular options chosen by readers. Additionally, a useful feature to consider is tracking how long users spend on each section of the story.
 
 ### Frontend
 
 - **Technology**: React.js
 - **Features**:
   - **Story List**: Displays a list of available stories with options to like, dislike, and view details.
+  - **Most Popular Story**: Show Number Of Famous Story
   - **Story Details**: Shows the full content of a selected story, including choices and user interactions.
   - **Interactive Elements**: Users can select story paths, like or dislike stories, and see how their choices affect the narrative.
   - **State Management**: Manages state with React hooks to keep the UI updated based on user interactions.
@@ -27,6 +28,7 @@ An interactive storytelling platform where users can engage with stories through
   - **Authentication**: Secures endpoints using JWT tokens to ensure that only authenticated users can perform certain actions.
   - **Data Models**:
     - **Story Model**: Includes fields for title, content, choices, author, and user interactions (likes and dislikes).
+      - **Most Popular Story**: Show Number Of Famous Story
     - **Choice Model**: Represents choices within a story with paths leading to different content.
   
 ### APIs
