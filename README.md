@@ -88,7 +88,6 @@ The interactive storytelling platform successfully integrates user-driven narrat
 
 - Node.js
 - MongoDB
-- Google Cloud account (for deployment)
 
 ### Installation
 
