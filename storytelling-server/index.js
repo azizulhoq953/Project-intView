@@ -23,14 +23,18 @@ const io = new socketIo(server, {
 });
 
 
+
 app.use(cors({
-    origin: 'http://localhost:3000',  
-    methods: ['GET', 'POST', 'DELETE'], 
+    origin: 'http://localhost:3000',  // Frontend origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Allow all required methods
+    allowedHeaders: ['Content-Type', 'Authorization'],  // Allow necessary headers
     credentials: true  
 }));
-
+// Handle preflight requests for all routes
+app.options('*', cors()); 
 // Middleware
 app.use(json());  
+// app.use(cors(corsOptions));
 
 io.on('connection', (socket) => {
     console.log('New client connected');
@@ -54,7 +58,9 @@ connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true
 
 app.use('/api/users', userRoutes);       
 app.use('/api/stories', storyRoutes);    
-app.use('/api/auth', authRoutes);       
+app.use('/api/auth', authRoutes);  
+// app.put('/api/stories/edit/:id',storyRoutes)  
+   
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

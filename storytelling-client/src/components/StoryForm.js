@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from '../api/axiosInstance';
-import '../index.css'; // Import CSS file for styling
+import '../css/index.css'; // Import CSS file for styling
 
 const StoryForm = () => {
     const [title, setTitle] = useState('');

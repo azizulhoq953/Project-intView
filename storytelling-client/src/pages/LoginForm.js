@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from '../api/axiosInstance';
+import '../css/index.css';
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
@@ -14,10 +15,8 @@ const LoginForm = () => {
             const response = await axiosInstance.post('/api/auth/login', { email, password });
             const { token } = response.data;
 
-           
             localStorage.setItem('token', token);
 
-      
             window.location.href = '/'; 
 
         } catch (err) {
@@ -31,18 +30,20 @@ const LoginForm = () => {
             <h2>Login</h2>
             {error && <p>{error}</p>}
             <div>
-                <label>Email:</label>
+                {/* <label>Email:</label> */}
                 <input
                     type="email"
+                    placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
             </div>
             <div>
-                <label>Password:</label>
+                {/* <label>Password:</label> */}
                 <input
                     type="password"
+                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
